@@ -1,8 +1,12 @@
-const auth = firebase.auth();
+
+
+import { auth } from './firebase.config.js'; // ✅ تأكد من المسار الصحيح
+
 function login() {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
   const errorMsg = document.getElementById("error");
+
   auth.signInWithEmailAndPassword(email, password)
     .then(() => {
       window.location.href = "dashboard.html";
